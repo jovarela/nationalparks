@@ -21,11 +21,11 @@ spec:
       spec:
         params:
           - name: APP_NAME
-            value: $(tt.params.git-repo-name)
+            value: $(params.git-repo-name)
           - name: APP_GIT_URL
-            value: $(tt.params.git-repo-url)
+            value: $(params.git-repo-url)
           - name: APP_GIT_REVISION
-            value: $(tt.params.git-revision)
+            value: $(params.git-revision)
         pipelineRef:
           name: nationalparks-pipeline
         workspaces:
@@ -56,7 +56,7 @@ spec:
   serviceAccountName: pipeline
   triggers:
   - bindings:
-    - ref: nationalparks
+    - name: nationalparks
     template:
       name: nationalparks
 ---

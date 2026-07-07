@@ -58,7 +58,7 @@ spec:
   - bindings:
     - ref: nationalparks
     template:
-      name: nationalparks
+      ref: nationalparks
 ---
 apiVersion: route.openshift.io/v1
 kind: Route
@@ -70,7 +70,7 @@ metadata:
   name: el-nationalparks
 spec:
   port:
-    targetPort: 8080
+    targetPort: http-listener
   to:
     kind: Service
     name: el-nationalparks
